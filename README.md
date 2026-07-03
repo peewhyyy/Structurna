@@ -59,14 +59,14 @@ Because macOS (particularly Apple Silicon M1/M2/M3/M4 chips) handles Python envi
 
 ### Prerequisites (macOS)
 Ensure you have **Homebrew** installed. If you do not have it, open your Terminal and run:
-\```bash
+```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-\```
+```
 
-Next, install **Git** and **Python 3.11** (recommended for stable deep-learning library support on macOS):
-\```bash
-brew install git python@3.11
-\```
+Next, install **Git** and **Python 3.14** (recommended for stable deep-learning library support on macOS):
+```bash
+brew install git python@3.14
+```
 
 ---
 
@@ -75,35 +75,35 @@ brew install git python@3.11
 Open your **Terminal** app and execute the following steps:
 
 #### 1. Clone the Repository
-\```bash
+```bash
 git clone https://github.com/peewhyyy/Structurna.git
 cd structurna
-\```
+```
 
 #### 2. Create and Activate a Virtual Environment
 Using a virtual environment is highly recommended on macOS to prevent package conflicts with system-level Python utilities.
-\```bash
-# Create the environment using Python 3.11
-python3.11 -m venv venv
+```bash
+# Create the environment using Python 3.14
+python3.14 -m venv venv
 
 # Activate the virtual environment
 source venv/bin/activate
-\```
+```
 *(Your terminal prompt will now be prefixed with `(venv)` to indicate the environment is active).*
 
 #### 3. Verify Submodule Directory Structure
 Ensure your local directory structure correctly exposes the RiboNN library dependencies:
-\```text
+```text
 ./RiboNN/src/predict.py
 ./RiboNN/models/
-\```
+```
 
 #### 4. Install Dependencies
 Install the required packages. On Apple Silicon Macs, pip will automatically resolve and compile packages natively for ARM64:
-\```bash
+```bash
 pip install --upgrade pip
 pip install -r requirements.txt
-\```
+```
 
 > **Apple Silicon Acceleration Note:** If the underlying `RiboNN` deep learning engine utilizes PyTorch, it will automatically attempt to leverage Apple's **MPS (Metal Performance Shaders)** backend to accelerate inference via the Mac's unified memory and GPU, rather than relying on CUDA.
 
@@ -113,13 +113,13 @@ pip install -r requirements.txt
 
 To spin up the platform locally, ensure your virtual environment is active and launch the Streamlit server:
 
-\```bash
+```bash
 # Always ensure the virtual environment is active
 source venv/bin/activate
 
 # Launch the platform
 python -m streamlit run structurna.py
-\```
+```
 
 This will initialize a local host server and automatically open the Structurna platform interface in your default macOS browser (Safari, Chrome, or Firefox) at `http://localhost:8501`.
 
@@ -129,9 +129,9 @@ This will initialize a local host server and automatically open the Structurna p
 
 * **`xcrun: error: invalid active developer path`**
   If you see this error after a macOS system update, your Xcode command-line tools have become detached. Reinstall them by running:
-  \```bash
+  ```bash
   xcode-select --install
-  \```
+  ```
 * **Architecture Conflicts (`mach-o file, but is an incompatible architecture`)**
   If a Python package throws an architecture error, ensure you are running a native ARM64 version of Python, rather than an Intel version running via Rosetta emulation. You can verify your native state by running `arch` in your terminal; it should output `arm64`.
 
