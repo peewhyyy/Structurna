@@ -1,0 +1,12 @@
+streamlit
+pandas
+plotly
+biopython
+seqfold
+torch
+scipy
+numpy
+scikit-learn
+tqdm
+pyyaml
+pytorch_lightning
