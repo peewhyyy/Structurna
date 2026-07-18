@@ -1,6 +1,6 @@
 # Structurna
 
-Structurna is an advanced mRNA design and optimization platform that bridges traditional biophysical rules with state-of-the-art deep learning syntax analysis. Built to accelerate translation engineering, the platform enables precise optimization of translation efficiency (TE) while minimizing local biophysical penalties.
+Structurna is an advanced mRNA design and optimization platform that analyzes sequences utilizing both traditional biophysical rules  and state-of-the-art deep learning. The platform enables precise optimization of translation efficiency (TE) while minimizing local biophysical penalties.
 
 ---
 
